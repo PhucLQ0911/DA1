@@ -31,8 +31,10 @@
               <td>2011/04/25</td>
               <td>Show</td>
               <td class="text-center">
-                <a href="?act=updateCate" class="btn btn-warning">Update</a>
-                <a href="?act=deleteCate" class="btn btn-danger">Delete</a>
+                <div class="text-center">
+                  <a href="?act=updateCate" class="btn btn-warning">Update</a>
+                  <a href="?act=deleteCate" class="btn btn-danger">Delete</a>
+                </div>
               </td>
             </tr>
             <tr>

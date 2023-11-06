@@ -36,9 +36,11 @@
               <td>Show</td>
               <td>Iphone new generation</td>
               <td>23/11/2023</td>
-              <td>
-                <a href="?act=updateProduct" class="btn btn-warning">Update</a>
-                <a href="?act=deleteProduct" class="btn btn-danger">Delete</a>
+              <td class="text-center">
+                <div class="text-center">
+                  <a href="?act=updateProduct" class="btn btn-warning">Update</a>
+                  <a href="?act=deleteProduct" class="btn btn-danger">Delete</a>
+                </div>
               </td>
             </tr>
 
@@ -52,8 +54,10 @@
               <td>Iphone new generation</td>
               <td>23/11/2023</td>
               <td>
-                <a href="?act=updateProduct" class="btn btn-warning">Update</a>
-                <a href="?act=deleteProduct" class="btn btn-danger">Delete</a>
+                <div class="text-center">
+                  <a href="?act=updateProduct" class="btn btn-warning">Update</a>
+                  <a href="?act=deleteProduct" class="btn btn-danger">Delete</a>
+                </div>
               </td>
             </tr>
 
