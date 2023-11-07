@@ -78,7 +78,7 @@
         <!-- Add more -->
         <div class="col-lg-2 d-flex justify-content-center align-items-end">
           <label for="categories" class="form-control-label"></label>
-          <button id="" type="button" class="btn btn-lg btn-success btn-block" onclick="add_more_attr()">
+          <button id="" type="button" class="btn btn-lg btn-success btn-block " onclick="add_more_attr()">
             <span id="payment-button-amount">Add More</span>
           </button>
         </div>
@@ -91,7 +91,7 @@
       <label class="form-label">Description</label>
       <textarea class="form-control" placeholder="Leave a description product here" style="height: 100px"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary mb-3">Add</button>
+    <button type="submit" class="btn btn-primary mb-3 text-center">Add product</button>
   </form>
 
 
