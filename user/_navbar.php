@@ -39,6 +39,10 @@
       <a href="login.html" class="btn border">
         <i class="far fa-user text-primary"></i>
       </a>
+      <a href="" class="btn border">
+        <i class="fas fa-calendar-week text-primary"></i>
+      </a>
+
     </div>
   </div>
 </div>
