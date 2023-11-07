@@ -45,6 +45,7 @@
                   <button class="btn btn-success" data-bs-id="<?php echo $value['id']; ?>" data-bs-toggle="modal" data-bs-target="#modalConfirm">
                     Confirm
                   </button>
+
                   <button class="btn btn-danger" data-bs-id="<?php echo $value['id']; ?>" data-bs-toggle="modal" data-bs-target="#modalRefuse">
                     Refuse
                   </button>
@@ -72,7 +73,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-        <a href="" class="btn btn-danger" id="btn-delete">Xác nhận huỷ</a>
+        <a href="" class="btn btn-danger" id="btn-refuse">Xác nhận huỷ</a>
       </div>
     </div>
   </div>
@@ -90,26 +91,26 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-        <a href="" class="btn btn-danger" id="btn-delete">Xác nhận đơn</a>
+        <a href="" class="btn btn-danger" id="btn-confirm">Xác nhận đơn</a>
       </div>
     </div>
   </div>
 </div>
 
 <script>
-  var modalRefuse = document.getElementById('modalRefuse')
-  modalDelete.addEventListener('show.bs.modal', function(event) {
-    var button = event.relatedTarget
-    var id = button.getAttribute('data-bs-id')
-    var link = `?act=refuseOrder&idOrder=${id}`
-    document.getElementById("btn-delete").setAttribute("href", link)
+  let modalConfirm = document.getElementById('modalConfirm')
+  modalConfirm.addEventListener('show.bs.modal', function(event) {
+    let button = event.relatedTarget
+    let id = button.getAttribute('data-bs-id')
+    let link = `?act=confirmOrder&idOrder=${id}`
+    document.getElementById("btn-confirm").setAttribute("href", link)
   })
 
-  var modalConfirm = document.getElementById('modalConfirm')
-  modalDelete.addEventListener('show.bs.modal', function(event) {
-    var button = event.relatedTarget
-    var id = button.getAttribute('data-bs-id')
-    var link = `?act=confirmOrder&idOrder=${id}`
-    document.getElementById("btn-delete").setAttribute("href", link)
+  let modalRefuse = document.getElementById('modalRefuse')
+  modalRefuse.addEventListener('show.bs.modal', function(event) {
+    let button = event.relatedTarget
+    let id = button.getAttribute('data-bs-id')
+    let link = `?act=refuseOrder&idOrder=${id}`
+    document.getElementById("btn-refuse").setAttribute("href", link)
   })
 </script>
