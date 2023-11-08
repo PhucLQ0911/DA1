@@ -1,5 +1,5 @@
 -- CREATE DATABASE 
-DROP DATABASE `duan1`;
+-- DROP DATABASE `duan1`;
 CREATE DATABASE `duan1`;
 USE `duan1`;
 
@@ -60,6 +60,7 @@ CREATE TABLE `user` (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     user_name VARCHAR(20) NOT NULL,
     `password` VARCHAR(10) NOT NULL,
+    `fullname` VARCHAR(100),
     phone VARCHAR(11),
     address VARCHAR(50),
     email VARCHAR(50),
@@ -90,6 +91,7 @@ CREATE TABLE `payment` (
 CREATE TABLE `order` (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     id_user INT UNSIGNED,
+    fullname VARCHAR(100),
     phone VARCHAR(11),
     address VARCHAR(50),
     email VARCHAR(50),
