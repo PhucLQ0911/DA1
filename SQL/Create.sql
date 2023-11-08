@@ -1,5 +1,5 @@
 -- CREATE DATABASE 
--- DROP DATABASE `duan1`;
+DROP DATABASE `duan1`;
 CREATE DATABASE `duan1`;
 USE `duan1`;
 
@@ -8,8 +8,7 @@ CREATE TABLE `category` (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     `name` VARCHAR(50) NOT NULL,
     image VARCHAR(50),
-    `status` ENUM('0', '1') DEFAULT '0',
-    is_show ENUM('0', '1') DEFAULT '0'
+    `status` ENUM('0', '1') DEFAULT '0'
 );
 
 CREATE TABLE `product` (
@@ -21,7 +20,6 @@ CREATE TABLE `product` (
     id_cate INT UNSIGNED,
     added_on DATETIME DEFAULT NOW(),
     `status` ENUM('0', '1') DEFAULT '0',
-    is_show ENUM('0', '1') DEFAULT '0',
     FOREIGN KEY (id_cate)
         REFERENCES `category` (id)
 );
@@ -65,8 +63,7 @@ CREATE TABLE `user` (
     address VARCHAR(50),
     email VARCHAR(50),
     image VARCHAR(50),
-    `role` ENUM('0', '1') DEFAULT '0',
-    is_show ENUM('0', '1') DEFAULT '0'
+    `role` ENUM('0', '1') DEFAULT '0'
 );
 
 
@@ -88,6 +85,11 @@ CREATE TABLE `payment` (
     method VARCHAR(50)
 );
 
+CREATE TABLE order_status (
+    id INT UNSIGNED PRIMARY KEY,
+    purchase_status ENUM('Pending', 'Cancelled', 'Done')
+);
+
 CREATE TABLE `order` (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     id_user INT UNSIGNED,
@@ -97,10 +99,14 @@ CREATE TABLE `order` (
     email VARCHAR(50),
     payment_id INT UNSIGNED,
     added_on DATETIME DEFAULT NOW(),
-    order_status ENUM('0', '1', '2', '3') DEFAULT '0',
+    order_status INT UNSIGNED,
+    `status` ENUM('0', '1') DEFAULT '0',
     FOREIGN KEY(id_user) REFERENCES `user`(id),
-    FOREIGN KEY (payment_id) REFERENCES `payment`(id)
+    FOREIGN KEY (payment_id) REFERENCES `payment`(id),
+    FOREIGN KEY (order_status) REFERENCES `order_status`(id)
 );
+
+
 
 CREATE TABLE `order_detail` (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,

@@ -62,7 +62,6 @@
   </div>
 </div>
 
-
 <script>
   var modalDelete = document.getElementById('modalDelete')
   modalDelete.addEventListener('show.bs.modal', function(event) {
